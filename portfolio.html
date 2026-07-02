@@ -1,114 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, white, #DBDBDB);
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(to bottom, yellow, #FAFDEC);
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #333;
-    }
-
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    .project {
-      background: white;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .project h3 {
-      margin-top: 0;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #ffeb3b;
-      padding: 2px 8px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      margin-right: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <h1>My Projects 💛</h1>
-  <nav>
-    <a href="index.html">Home</a>
-	<a href="portfolio.html">Portfolio</a>
-  </nav>
+    <h1>My Projects</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+    </nav>
 </header>
 
 <section>
 
-  <div class="project">
-    <h3>Undertale Wildfire</h3>
-    <p>A fan game project based on Undertale featuring custom mechanics and story content.</p>
+    <div class="search-container">
+        <input
+            type="text"
+            id="tagSearch"
+            placeholder="Search by tag (Java, Python, GameMaker...)"
+            onkeyup="filterProjects()">
+    </div>
+
+    <div class="project" data-tags="gamemaker game-dev undertale">
+        <h3>Undertale Wildfire</h3>
+		<p>
+			A fan game inspired by Undertale, developed as part of Team Wildfire.
+			The project features custom combat mechanics, original story content,
+			character encounters, and exploration systems.
+			I contributed to gameplay systems, bug fixing, and the implementation
+			of core game features using GameMaker.
+		</p>
+
+        <span class="tag">GameMaker</span>
+        <span class="tag">Game Dev</span>
+
+        <p>
+            <a href="https://gamejolt.com/games/undertalewildfire/868658"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Demo on GameJolt
+            </a>
+        </p>
+    </div>
+
+    <div class="project" data-tags="gamemaker game-dev platformer">
+        <h3>A Mildly Difficult Platformer</h3>
+		<p>
+			A meta-narrative platforming game that explores and playfully critiques
+			common platformer tropes. Built in GameMaker, the project includes custom
+			movement mechanics, level design, dialogue systems, and scripted events.
+			It served as an opportunity to practice game design principles and
+			player-focused gameplay development.
+		</p>
+        <span class="tag">GameMaker</span>
+        <span class="tag">Game Dev</span>
+
+        <p>
+            <a href="https://github.com/aristhemage/AMDP"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </p>
+    </div>
+
+    <div class="project" data-tags="java swing algorithms gui">
+        <h3>Wordle Solver</h3>
+
+        <p>
+            A Java Swing application that helps solve Wordle puzzles by
+            filtering possible solutions based on previous guesses and
+            feedback. The solver tracks letter positions, required letters,
+            and excluded letters to generate intelligent suggestions in
+            real time.
+        </p>
+
+        <span class="tag">Java</span>
+        <span class="tag">Java Swing</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">GUI Development</span>
+
+        <p>
+            <a href="https://github.com/aristhemage/WorldeSolver/tree/main"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </p>
+    </div>
+
+    <div class="project" data-tags="python tkinter automation">
+        <h3>File Organizer Tool</h3>
+
+		<p>
+			A Python desktop application built with Tkinter that automatically
+			organizes cluttered folders into categorized subdirectories. The tool
+			scans files, identifies their types, and sorts them into appropriate
+			locations, reducing manual file management. This project provided
+			experience with file system operations, automation workflows, and
+			desktop application development.
+		</p>
+
+        <span class="tag">Python</span>
+        <span class="tag">Tkinter</span>
+        <span class="tag">Automation</span>
+
+        <p>
+            <a href="https://github.com/aristhemage/Folder-Organizer"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </p>
+    </div>
+
+    <div class="project" data-tags="python tkinter matplotlib data-tracking">
+        <h3>Productivity Tracker</h3>
+
+		<p>
+			A Python productivity tracking application that records productive and
+			non-productive time throughout the day. The program stores historical
+			data, generates visual graphs using Matplotlib, and provides users with
+			long-term productivity statistics. Through this project, I gained
+			experience working with data persistence, visualization, user interface
+			design, and analytics-focused software development.
+		</p>
+
+        <span class="tag">Python</span>
+        <span class="tag">Tkinter</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Data Tracking</span>
+
+        <p>
+            <a href="https://github.com/aristhemage/Productivity-Tracker"
+               target="_blank"
+               rel="noopener noreferrer">
+                View on GitHub
+            </a>
+        </p>
+    </div>
+	
+	<div class="project" data-tags="gamemaker game-dev simulation idle-game axolotl">
+
+    <h3>Axolotl Simulator</h3>
+
+    <p>
+        A virtual pet and idle simulation game built in GameMaker where players
+        care for a growing collection of axolotls. Players can feed their
+        axolotls, play with them, breed new generations, and watch them grow
+        over time. Each axolotl has its own behaviors and lifecycle, creating
+        a relaxing experience centered around collecting and caring for virtual pets.
+    </p>
+
+    <p>
+        This project allowed me to practice simulation systems, AI behaviors,
+        save data management, state machines, and object-oriented game design.
+        It also provided experience creating systems that interact with one
+        another, such as growth, breeding, needs, and idle progression.
+    </p>
+
     <span class="tag">GameMaker</span>
     <span class="tag">Game Dev</span>
-    <p><a href="https://gamejolt.com/games/undertalewildfire/868658" target="_blank" rel="noopener noreferrer">View demo on Gamejolt</a></p>
-  </div>
+    <span class="tag">Simulation</span>
+    <span class="tag">Idle Game</span>
+    <span class="tag">Axolotls</span>
 
-  <div class="project">
-    <h3>A Mildly Difficult Platformer</h3>
-    <p>A platforming meta-narrative game about platforming games.</p>
-    <span class="tag">GameMaker</span>
-    <span class="tag">Game Dev</span>
-    <p><a href="https://github.com/aristhemage/AMDP" target="_blank" rel="noopener noreferrer">View on Github</a></p>
-  </div>
+    <p>
+        <a href="https://github.com/aristhemage/Axolotl-Sim"
+           target="_blank"
+           rel="noopener noreferrer">
+            View on GitHub
+        </a>
+    </p>
 
-  <div class="project">
-    <h3>File Organizer Tool</h3>
-    <p>A Python + Tkinter desktop app that organizes messy folders into categorized subfolders automatically.</p>
-    <span class="tag">Python</span>
-    <span class="tag">Tkinter</span>
-    <span class="tag">Automation</span>
-    <p><a href="https://github.com/aristhemage/Folder-Organizer" target="_blank">View on GitHub</a></p>
-  </div>
+</div>
 
-  <div class="project">
-    <h3>Productivity Tracker</h3>
-    <p>A desktop app that tracks productive vs goofing time with live stats, graphs, and persistent daily history.</p>
-    <span class="tag">Python</span>
-    <span class="tag">Tkinter</span>
-    <span class="tag">Matplotlib</span>
-    <span class="tag">Data Tracking</span>
-    <p><a href="https://github.com/aristhemage/Productivity-Tracker" target="_blank">View on GitHub</a></p>
-  </div>
+<div class="project" data-tags="react html css javascript mongodb full-stack social-media web-development">
+
+    <h3>Petstagram</h3>
+
+    <p>
+        A full-stack social media platform designed specifically for pet owners,
+        where the focus is on sharing photos, updates, and experiences centered
+        around their pets. Inspired by Instagram, Petstagram allows users to
+        create accounts, upload pet content, interact with posts, and explore
+        a community built around animal companions.
+    </p>
+
+    <p>
+        Developed as a college project, Petstagram was built using React for
+        the frontend, MongoDB for data storage, and a custom server-side backend.
+        The project provided hands-on experience with full-stack web development,
+        database design, user authentication, API communication, and building
+        interactive user interfaces.
+    </p>
+
+    <p>
+        Because the original MongoDB database used during development is no
+        longer active, anyone running the project will need to configure their
+        own MongoDB database and run the backend server locally. Despite this,
+        the repository serves as a strong demonstration of full-stack application
+        architecture and modern web development practices.
+    </p>
+
+    <span class="tag">React</span>
+    <span class="tag">MongoDB</span>
+    <span class="tag">HTML</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Full Stack</span>
+    <span class="tag">Web Development</span>
+
+    <p>
+        <a href="https://github.com/aristhemage/Petstagram"
+           target="_blank"
+           rel="noopener noreferrer">
+            View on GitHub
+        </a>
+    </p>
+
+</div>
+
+<div class="project" data-tags="kotlin android jetpack-compose mobile-development task-management">
+
+    <h3>TaskNest</h3>
+
+    <p>
+        A mobile task management application built for Android using Kotlin
+        and Jetpack Compose. TaskNest allows users to create, organize, and
+        track personal tasks through a clean and responsive interface designed
+        for everyday productivity.
+    </p>
+
+    <p>
+        Users can create tasks with priorities and due dates, mark tasks as
+        completed, and choose whether completed items should be displayed or
+        hidden. The application automatically highlights overdue tasks in red,
+        making it easy to identify items that require immediate attention.
+    </p>
+
+    <p>
+        The app includes a user login system that keeps task data separated
+        between accounts, ensuring users only see and manage their own tasks.
+        Through this project, I gained experience with Android development,
+        declarative UI design using Jetpack Compose, state management, user
+        authentication concepts, and creating data-driven mobile applications.
+    </p>
+
+    <span class="tag">Kotlin</span>
+    <span class="tag">Android</span>
+    <span class="tag">Jetpack Compose</span>
+    <span class="tag">Mobile Development</span>
+    <span class="tag">Productivity</span>
+
+    <p>
+        <a href="https://github.com/aristhemage/TaskNesk"
+           target="_blank"
+           rel="noopener noreferrer">
+            View on GitHub
+        </a>
+    </p>
+	
+</div>
+
+	<div class="project" data-tags="html javascript web-development game-design chess prototype">
+
+    <h3>Chessify</h3>
+
+    <p>
+        Chessify is a web-based prototype that explores how traditional chess
+        could be modernized through progression systems commonly found in
+        contemporary games. The project was created to demonstrate potential
+        ways to increase player engagement through features such as leveling,
+        ranked progression, unlockable cosmetics, and special gameplay
+        modifiers.
+    </p>
+
+    <p>
+        While entirely hypothetical and not intended to replace traditional
+        chess, the project serves as a game design experiment focused on player
+        retention and monetization concepts. The prototype includes a functional
+        pass-and-play chess experience and showcases how progression systems
+        could be integrated into a classic strategy game.
+    </p>
+
+    <p>
+        Built using HTML, JavaScript, and supporting backend components, the
+        project provided experience with web development, board game logic,
+        user interface design, and systems-oriented game design. Although it
+        does not include online multiplayer functionality, it demonstrates both
+        technical implementation and the ability to analyze and redesign an
+        existing game from a product design perspective.
+    </p>
+
+    <span class="tag">HTML</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Web Development</span>
+    <span class="tag">Game Design</span>
+    <span class="tag">Chess</span>
+
+    <p>
+        <a href="https://github.com/aristhemage/Chessify"
+           target="_blank"
+           rel="noopener noreferrer">
+            View on GitHub
+        </a>
+    </p>
 
 </section>
+
+<script>
+function filterProjects() {
+    const input = document.getElementById("tagSearch");
+    const filter = input.value.toLowerCase();
+
+    const projects = document.getElementsByClassName("project");
+
+    for (let i = 0; i < projects.length; i++) {
+        const tags = (projects[i].getAttribute("data-tags") || "").toLowerCase();
+
+        if (tags.includes(filter)) {
+            projects[i].style.display = "";
+        } else {
+            projects[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>

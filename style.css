@@ -1,0 +1,65 @@
+.search-container {
+    margin-bottom: 2rem;
+}
+
+#tagSearch {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, white, #DBDBDB);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to bottom, yellow, #FAFDEC);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.project {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #ffeb3b;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
